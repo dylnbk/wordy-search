@@ -1460,7 +1460,7 @@ def parse_sections(file_or_path):
 
 # Page config.
 st.set_page_config(page_title="Word Search Generator", layout="wide")
-st.title("Word Search Generator")
+st.title("Puzzle it.")
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -1493,69 +1493,52 @@ with st.expander("See info"):
     st.write("### Thanks for visiting Wordy!")
 
     st.write("""
-        This website was made using Python, you can view the source [here](https://github.com/dylnbk/grabby).
+        This website was made using Python, you can view the source [here](https://github.com/dylnbk/wordy-search).
              
         Check out my personal website [dylnbk.page](https://dylnbk.page).
         
-        You can run this app locally by downloading and opening the Grabby.exe found [here](https://link.storjshare.io/s/jxgizi2qhjoqteuofxywilmnth4a/grabby/Grabby.zip).
-
         To show support, you can ☕ [buy me a coffee](https://www.buymeacoffee.com/dylnbk).
-
-        **CAUTION** 
-        - Leaving the number input at zero will download the entire playlist/profile.
-        - HQ will grab the highest available quality, which can take quite a while.
         """)
 
     st.write("***")
 
     st.write("""
-        ##### YouTube
-        - Video (MP4) & Audio (MP3) download.
-        - Video (MP4) & Audio (MP3) playlist download.
-        - Shorts (MP4) download.
-         """)
-    
-    st.write("***")
+        ##### Create custom word searches
+        - **Upload a .txt file** with your desired word list. The format is as follows:
+             
+            #Countries
+             
+            britain
+             
+            france
+             
+            argentina
+             
+            canada
+             
+            china
+             
+            The # represents the title of the word search, the items below it will be the contents.
+             
+            You can include multiple lists (within the same .txt file), a new puzzle will be generated for every occurance of the # symbol.
 
-    st.write("""
-        ##### Instagram
-        - Single post & Profile download.
-        - Web version doesn't always work.
-         """)
+        - **Upload an image** to give the word search a custom shape.
+        - **Upload a collection** as a .zip file to generate multiple word searches with their own corresponding images. Include a separate .txt file, and an image for each word file. 
+             
+            Please follow the naming convention: words1.txt, words2.txt, img1.jpg, img2.jpg.
 
-    st.write("***")
-
-    st.write("""
-        ##### TikTok
-        - Single video download.
-        - Profile download - up to last 30 videos.
-         """)
-
-    st.write("***")
-
-    st.write("""
-        ##### Reddit
-        - Video (MP4) & Audio (MP3) download - will convert videos to audio.
-        - Image (JPG) & Gallery download - will grab all images in a post.
-         """)
-
-    st.write("***")
-
-    st.write("""
-        ##### Twitter
-        - Video (MP4) download.
-         """)
-
-    st.write("***")
-
-    st.write("""
-        ##### Lucky 🤞
-        - You can grab from many different places.
-        - Powered by yt dlp - for a full list of supported websites visit [here](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md).
+            The words.txt will be associated with the img.jpg via the number at the end, so words2.txt will use img2.jpg as its image mask.
+              
+        - **Upload a .ttf** for custom fonts.
+        - **Generate solution** will include a solved version in the output. Outlined solutions do not work with the 'snake' style word direction.
+        - **Attempts to generate grid** only required with profanity filter turned on.
          """)
 
     st.write("")
     st.write("")
+
+    st.image('words.png', caption='Example word.txt', use_column_width='auto')
+    st.image('collections.png', caption='Example collections.zip', use_column_width='auto')
 
 
 # File upload, .txt .png .jpg .ttf or .zip for a collection.
