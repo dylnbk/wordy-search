@@ -1,0 +1,4 @@
+streamlit
+svgwrite
+opencv-python-headless
+Pillow==9.4.0
