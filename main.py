@@ -1532,6 +1532,7 @@ with st.expander("See info"):
         - **Upload a .ttf** for custom fonts.
         - **Generate solution** will include a solved version in the output. Outlined solutions do not work with the 'snake' style word direction.
         - **Attempts to generate grid** only required with profanity filter turned on.
+        - **Threshold** is used to determine how extreme the image mask is applied (higher values include more areas of the image, darkest parts of the image are filled with letters).
          """)
 
     st.write("")
@@ -1597,7 +1598,7 @@ if txt_file is not None or collection_file is not None:
     col13, col14 = st.columns([1,1])
     with col13:
         rows = st.number_input("Grid rows:", value=15, min_value=1, step=1)
-        threshold = st.number_input("Threshold:", value=100, min_value=1, max_value=250, step=1)
+        threshold = st.number_input("Threshold:", value=245, min_value=1, max_value=250, step=1)
     with col14:    
         cols = st.number_input("Grid columns:", value=15, min_value=1, step=1)
         resolution = st.number_input("Resolution:", min_value=1, step=1)
