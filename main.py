@@ -1460,7 +1460,7 @@ def parse_sections(file_or_path):
 
 # Page config.
 st.set_page_config(page_title="Word Search Generator", layout="wide")
-st.title("Puzzle it.")
+st.title("Word it.")
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -1490,7 +1490,7 @@ include_svg = False
 # create an info box
 with st.expander("See info"):
 
-    st.write("### Thanks for visiting Wordy!")
+    st.write("### Thanks for visiting Wordit!")
 
     st.write("""
         This website was made using Python, you can view the source [here](https://github.com/dylnbk/wordy-search).
